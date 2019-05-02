@@ -30,8 +30,18 @@
 		<div class="container">
 			<br>
 			<h1 class="display-4">Giphy API</h1>
-			<p class="lead">how i am feeling ...</p>
-			<button class="btn btn-success" id="start">Search !</button>
+			<div class="row">
+				<div class="col-md-12">
+					<div id="searchBox" class="center-box">
+						<form id="searchForm" class="form-inline">
+							<input id="searchInput" type="text" class="form-control search" placeholder="add a placeholder here"
+								data-name="">
+							<button id="searchButton" type="submit" class="btn btn-warning search">Search!</button>
+							<div id="searchRow" class="row">
+						</form>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -40,9 +50,23 @@
 		<br>
 		<br>
 
-		<button id="cat-button">Generate Random Button</button>
-		<div id="images">
+
+			<div class="col-md-12">
+				<div id="addButtons" class="center-box"></div>
+			</div>
 		</div>
+
+
+	</div>
+
+	<div class="row gifBox">
+		<div class="col-md-12">
+			<div id="gifImage"></div>
+
+		</div>
+	</div>
+
+	</div>
 
 	</div>
 </body>

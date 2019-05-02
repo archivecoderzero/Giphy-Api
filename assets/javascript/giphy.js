@@ -1,3 +1,6 @@
+$(document).ready(function () {
+
+    
     var apiKey = "7MTC1g2AgJ1zKwZ1HoRkVWLwVHIP9Rqp"
 
 
@@ -31,3 +34,5 @@
           $("#images").prepend(catImage);
         });
     });
+
+  });

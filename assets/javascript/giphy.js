@@ -1,38 +1,34 @@
 $(document).ready(function () {
 
-    
-    var apiKey = "7MTC1g2AgJ1zKwZ1HoRkVWLwVHIP9Rqp"
 
+  var feels = ["lucky" ,"awesome" , "hyped" ];  
+      function showButtons() {
 
-    $("#cat-button").on("click", function() {
-      var request = prompt("What Gif do you Want?")
+        $("#addButtons").empty();
+        for (var i = 0; i < feels.length; i++) {
+            var button = $("<button>");
+            button.addClass("feels btn btn-danger");     
+            button.attr("data-name", feels[i]);  
+            button.text(feels[i]);                 
+            $("#addButtons").append(button);         
+        }
+    }
 
-      //
+    showButtons();
 
-      var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=" + apiKey +  "&tag=" + request ;
+    // on click of the search button, call function that saves text input 
+    $("#searchButton").on("click", function (event) {
+        event.preventDefault();                                //prevents page from refreshing
 
-      //
-      $.ajax({
-        url: queryURL,
-        method: "GET"
-      })
+        searchResult = $("#searchInput").val().trim();    //grab the text entered into the form
+        console.log("input: " + searchResult);
 
-      //
-        .then(function(response) {
+        feels.push(searchResult);
+        console.log(feels);
 
-        //
-          var imageUrl = response.data.image_original_url;
-
-          //
-          var catImage = $("<img>");
-
-          //
-          catImage.attr("src", imageUrl);
-          catImage.attr("alt", "cat image");
-
-          //
-          $("#images").prepend(catImage);
-        });
+        showButtons();
     });
 
-  });
+
+});
+

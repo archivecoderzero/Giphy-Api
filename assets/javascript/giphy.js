@@ -16,15 +16,15 @@ $(document).ready(function () {
 
     showButtons();
 
-    // on click of the search button, call function that saves text input 
     $("#searchButton").on("click", function (event) {
-        event.preventDefault();                                //prevents page from refreshing
+        event.preventDefault();                          
 
-        searchResult = $("#searchInput").val().trim();    //grab the text entered into the form
-        console.log("input: " + searchResult);
+        searchResult = $("#searchInput").val().trim();
+        if (searchResult != ""){
+        feels.push(searchResult);}
 
-        feels.push(searchResult);
-        console.log(feels);
+        // added this else statement so that it wont generate any blank buttons , 
+        else {alert("pick a topic please")}
 
         showButtons();
     });

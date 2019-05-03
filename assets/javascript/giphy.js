@@ -82,8 +82,6 @@ $(document).ready(function () {
       emotions.push(searchResult);
       showButtons();
       searchGifs();
-     
-
     }
 
     // added this else statement so that it wont generate any blank buttons , 
@@ -91,6 +89,16 @@ $(document).ready(function () {
 
     showButtons();
   });
+
+  //onclick event for when the user clicks a button
+
+  $(".emotions").on("click", function (event) {
+    searchResult = $(this).attr("data-name");
+    searchGifs();
+
+  });
+
+
 
 
 
@@ -115,7 +123,7 @@ function searchGifs() {
       for (var i = 0; i < results.length; i++) {
 
           var resultDiv = $("<div>");                                
-          var p = $("<p>").text("Rating: " + results[i].rating);    
+          var pTag = $("<p>").text("Rating: " + results[i].rating);    
           var newGif = $("<img>").attr('data-state', 'animate');       
 
           let gifUrl = results[i].images.original.url;           
@@ -128,7 +136,7 @@ function searchGifs() {
 
           $("#gifImage").append(newGif);
           resultDiv.append(newGif);              
-          resultDiv.append(p);
+          resultDiv.append(pTag);
 
           $("#gifImage").prepend(resultDiv);     
       }

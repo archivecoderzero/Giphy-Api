@@ -30,3 +30,26 @@
     margin: 5px;
     padding:5px;
 }
+
+.flex-column.result {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;   
+    border: solid red 2px;
+    max-width: 33%;
+    padding: 20px;
+}
+
+.d-flex.p-2.desc {
+    border: solid green 2px;
+    float: left;
+
+}
+
+.d-flex.pic {
+    border: solid blue 2px;
+    max-width: 100%;
+}
+
+.d-flex.align-content-stretch.flex-wrap.main {
+}

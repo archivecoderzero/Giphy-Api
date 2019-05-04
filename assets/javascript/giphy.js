@@ -34,7 +34,7 @@ $(document).ready(function () {
       else if (divider % 3 == 0)
       {
         var button = $("<button>");
-        button.addClass("emotions btn btn-secondary");
+        button.addClass("emotions btn btn-dark");
         button.attr("data-name", emotions[i]);
         button.text(emotions[i]);
         $("#addButtons").append(button);

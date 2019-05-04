@@ -1,0 +1,32 @@
+.btn.btn-info.search {
+    background-image: url(../../assets/images/buttonbg.gif)
+
+}
+
+#jtronMain {
+    text-align: center;
+    font-family: 'Fredericka the Great', cursive;
+}
+
+#searchButton{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#searchInput {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#searchRow {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;    
+}
+
+#addButtons {
+    margin: 5px;
+    padding:5px;
+}

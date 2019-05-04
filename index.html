@@ -13,8 +13,9 @@
 	<script type="text/javascript" src="assets/javascript/giphy.js"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
 		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Gugi|Lobster|Monoton" rel="stylesheet">
-
+	<link
+		href="https://fonts.googleapis.com/css?family=Bangers|Faster+One|Fontdiner+Swanky|Fredericka+the+Great|Love+Ya+Like+A+Sister"
+		rel="stylesheet">
 </head>
 
 <body>
@@ -29,15 +30,25 @@
 	<div id=jumbotron class="jumbotron jumbotron-fluid">
 		<div class="container">
 			<br>
-			<h1 class="display-4">Giphy API</h1>
+			<h1 id="jtronMain" class="display-4">Giphy API</h1>
+			<br>
 			<div class="row">
 				<div class="col-md-12">
 					<div id="searchBox" class="center-box">
-						<form id="searchForm" class="form-inline">
-							<input id="searchInput" type="text" class="form-control search" placeholder="add a placeholder here"
-								data-name="">
-							<button id="searchButton" type="submit" class="btn btn-warning search">Search!</button>
-							<div id="searchRow" class="row">
+						<form id="searchForm">
+							<input id="searchInput" type="text" class="form-control form-control-lg"
+								placeholder="add a placeholder here" data-name="">
+							<br>
+							<div class="d-flex justify-content-between">
+								<button id="searchButton" type="submit" class="btn btn-info search">Search!</button>
+							</div>
+
+							<div id="searchRow">
+								<div class="d-flex justify-content-center">
+									<div class="emotions" id="addButtons">
+									</div>
+								</div>
+							</div>
 						</form>
 					</div>
 				</div>
@@ -51,10 +62,8 @@
 		<br>
 
 
-			<div class="col-md-12">
-				<div id="addButtons" class="center-box"></div>
-			</div>
-		</div>
+
+	</div>
 
 
 	</div>

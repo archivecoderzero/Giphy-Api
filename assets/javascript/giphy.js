@@ -97,7 +97,6 @@ $(document).ready(function () {
   $(".buttonMaker").on("click", function () {
     searchResult =  $(this).attr("data-name");
     console.log(this)
-    event.preventDefault();
     searchGifs(searchResult);
     showButtons();
   });
@@ -106,11 +105,14 @@ $(document).ready(function () {
   function searchGifs() {
     // set the search term to the value input by the user
     var searchImage = $(this).attr("data-name");
+    console.log("attribute of " + searchImage)
     if (searchImage === undefined) {
       searchImage = searchResult;
     }
+    var offset = Math.floor(Math.random() * 999);
+    console.log(offset)
   
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchImage + "&api_key=" + apiKey +"&limit=10&offset=0";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchImage + "&api_key=" + apiKey +"&limit=10&offset="+offset+"&random";
     console.log(apiKey) ;
     console.log(searchImage);
   

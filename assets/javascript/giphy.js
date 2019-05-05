@@ -162,8 +162,8 @@ $(document).ready(function () {
   
             var resultDiv = $("<div class='flex-column result'>");                                
             var pTag = $("<p class='d-flex p-2 desc' >").text("Rating: " + results[i].rating);    
-            var newGif = $("<img class='d-flex pic'>").attr('data-state', 'animate');       
-            var topicTag = $("<p class='d-flex p-2 desc' >").text("Topic: " + topic );
+            var newGif = $("<img class='d-flex pic'>").attr('data-state', 'animate');  
+            var topicTag = $("<p class='d-flex p-2 desc1' >").text("Topic: " + topic );
 
 
             var imgURL = response.data[i].images.fixed_width_still.url;
@@ -174,11 +174,11 @@ $(document).ready(function () {
 
             image.addClass("gif");
 
-            let gifUrl = results[i].images.original.url;           
+            var gifUrl = results[i].images.original.url;           
             newGif.attr("src", gifUrl);                              
             newGif.addClass("gif");
   
-            let stillURL = results[i].images.fixed_width_still.url;    
+            var stillURL = results[i].images.fixed_width_still.url;    
             newGif.attr("data-animate", gifUrl);
             newGif.attr("data-still", stillURL);
   
@@ -194,6 +194,20 @@ $(document).ready(function () {
   showButtons();
 
 
+
+  $(".gif").on("click", function () {
+
+    var state = $(this).attr("data-state");
+
+    if (state == "still") {
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate")
+
+    } else {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still")
+    }
+});
 
   
   

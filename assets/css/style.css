@@ -66,7 +66,7 @@
     margin-right: 25%;
     text-transform: uppercase;
     color: orangered;
-    font-family: Bangers;
+    font-family: "Bangers";
 
 }
 
@@ -92,7 +92,10 @@
     text-align: center;
     margin-left: 25%;
     margin-right: 25%;
-    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    color: midnightblue;
+    font-family: "Love Ya Like A Sister","cursive";
 }
 
 .d-flex.pic {

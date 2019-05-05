@@ -15,6 +15,16 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+.jumbotron:hover{
+    transition: .7s ease;
+    background-image: url(../../assets/images/bgbodyhov.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
 
 #searchButton{
     margin-left: auto;
@@ -55,17 +65,22 @@
     margin-left: 25%;
     margin-right: 25%;
     text-transform: uppercase;
-    color: white;
+    color: orangered;
+    font-family: Bangers;
+
 }
 
 .d-flex.p-2.desc:hover {
-    color: gold;
+    color: rgb(134, 16, 16);
     font-weight: 700;
+    text-align:center;
+
 }
 
 .d-flex.p-2.desc1:hover {
     color: gold;
     font-weight: 700;
+    text-align:center;
 }
 
 
@@ -73,7 +88,7 @@
 
 .d-flex.p-2.desc1 {
     /* border: solid green 2px; */
-    font-size: 25px;
+    font-size: 15px;
     text-align: center;
     margin-left: 25%;
     margin-right: 25%;
@@ -87,12 +102,15 @@
 
 .flex-column.result{
     padding:2px;
-    background:black;
+    padding: 5px;
+
 }
 
 .flex-column.result:hover {
     transition: .7s ease;
     background-image: url(../../assets/images/bghoverimg.gif);
+    padding: 5px;
+
 }
 
 
@@ -100,6 +118,11 @@
     border: 2px;
     padding: 10px;
     margin: 5px;
+}
+
+.giffy {
+    margin-top:45%;
+
 }
 
 .buttonMaker:hover {
@@ -111,9 +134,34 @@
 }
 body{
     background:black;
+    background-image: url(../../assets/images/bgbod.gif)    ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
 
 }
 
 
+.navbar {
+    background-image: url(../../assets/images/nav.gif)    ;
+    color: white;
+}
 
+.navbar-brand.mb-0.h1{
+    color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-footer {
+    text-align: center;
+}
+
+.card-footer:hover {
+    text-align: center;
+    color:tomato;
+    transition: .7s ease;
+    font-size:20px;
+}

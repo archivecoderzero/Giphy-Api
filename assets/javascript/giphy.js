@@ -1,12 +1,12 @@
-var emotions = ["lucky", "awesome", "hyped" , "bad" , "sad"];
+var buttonsTopic = ["funny", "emotional", "fantastic" , "great" , "amusing"];
 var divider = 0;
 var apiKey = "ieKS1cEoA0whNt3E5nXD19zwZzqeZo8I"; //FROM MY MAGICAL CAT BUTTON API
 var searchResult = "";
 
 //shorthanded console log
-function q(x){
-  console.log(x + " console log");
-};
+// function q(x){
+//   console.log(x + " console log");
+// };
 
 $(document).ready(function () {
 
@@ -16,25 +16,25 @@ $(document).ready(function () {
 
     divider++;
     $("#addButtons").empty();
-    for (var i = 0; i < emotions.length; i++)
+    for (var i = 0; i < buttonsTopic.length; i++)
     
     { 
 // created method to color the button differently 
       if (divider % 5 == 0 ) {
         var button = $("<button>");
         button.addClass("buttonMaker btn btn-danger");
-        button.attr("data-name", emotions[i]);
-        button.text(emotions[i]);
+        button.attr("data-name", buttonsTopic[i]);
+        button.text(buttonsTopic[i]);
         $("#addButtons").append(button);
-        q(divider);
+        // q(divider);
       }
 
       else if (divider % 4 == 0)
       {
         var button = $("<button>");
         button.addClass("buttonMaker btn btn-primary");
-        button.attr("data-name", emotions[i]);
-        button.text(emotions[i]);
+        button.attr("data-name", buttonsTopic[i]);
+        button.text(buttonsTopic[i]);
         $("#addButtons").append(button);
 
       }
@@ -42,8 +42,8 @@ $(document).ready(function () {
       {
         var button = $("<button>");
         button.addClass("buttonMaker btn btn-secondary");
-        button.attr("data-name", emotions[i]);
-        button.text(emotions[i]);
+        button.attr("data-name", buttonsTopic[i]);
+        button.text(buttonsTopic[i]);
         $("#addButtons").append(button);
 
       }
@@ -51,8 +51,8 @@ $(document).ready(function () {
       {
         var button = $("<button>");
         button.addClass("buttonMaker btn btn-warning");
-        button.attr("data-name", emotions[i]);
-        button.text(emotions[i]);
+        button.attr("data-name", buttonsTopic[i]);
+        button.text(buttonsTopic[i]);
         $("#addButtons").append(button);
 
       }
@@ -60,15 +60,15 @@ $(document).ready(function () {
       {
         var button = $("<button>");
         button.addClass("buttonMaker btn btn-success");
-        button.attr("data-name", emotions[i]);
-        button.text(emotions[i]);
+        button.attr("data-name", buttonsTopic[i]);
+        button.text(buttonsTopic[i]);
         $("#addButtons").append(button);
       }
       else {
         var button = $("<button>");
         button.addClass("buttonMaker btn btn-dark");
-        button.attr("data-name", emotions[i]);
-        button.text(emotions[i]);
+        button.attr("data-name", buttonsTopic[i]);
+        button.text(buttonsTopic[i]);
         $("#addButtons").append(button);
 
 
@@ -79,7 +79,6 @@ $(document).ready(function () {
   }
 
     $(document).on("click", ".buttonMaker", searchGifs);
-    $(document).on("click",".giffy",animateGif);
 
  
 
@@ -88,7 +87,7 @@ $(document).ready(function () {
     event.preventDefault();
     searchResult = $("#searchInput").val().trim();
     if (searchResult != "") {
-      emotions.push(searchResult);
+      buttonsTopic.push(searchResult);
       event.preventDefault();
       searchGifs(searchResult);
       showButtons();
@@ -107,10 +106,10 @@ $(document).ready(function () {
     }
     
     var topic =  searchImage;
-    console.log(topic)
-    console.log("function SearchGif proc")
+    // console.log(topic)
+    // console.log("function SearchGif proc")
     var offset = Math.floor(Math.random() * 999);
-    console.log(offset)
+    // console.log(offset)
   
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchImage + "&api_key=" + apiKey +"&limit=10&offset="+offset+"&random";
   
@@ -120,21 +119,26 @@ $(document).ready(function () {
         method: "GET"
     }).then(function (response) {
         var results = response.data;
+        console.log(results)
         for (var i = 0; i < results.length; i++) {
-  
+            var x = i + 1;
             var resultDiv = $("<div class='flex-column result'>");                                
             var pTag = $("<p class='d-flex p-2 desc' >").text("Rating: " + results[i].rating);    
             var topicTag = $("<p class='d-flex p-2 desc1' >").text("Topic: " + topic );
-
+            var download = $('<a href='+ imgDownload +' download = image>').text("DOWNLOAD");
+            var imgDownload = response.data[x].images.fixed_width_downsampled.url
             var imgURL = response.data[i].images.fixed_width_still.url;
             var imgURLStill = response.data[i].images.fixed_width_still.url;
             var imgURLAnimate = response.data[i].images.fixed_width_downsampled.url;
             var newGif = $("<img>").attr("src", imgURL).attr("data-still", imgURLStill).attr("data-animate", imgURLAnimate).attr("data-state", "still");
             newGif.addClass("giffy");
+            download.addClass("btn btn-outline-dark");
 
-            resultDiv.prepend(newGif);              
-            resultDiv.prepend(pTag);
-            resultDiv.prepend(topicTag);
+            $("#gifImage").append(newGif);
+            resultDiv.append(newGif);              
+            resultDiv.append(pTag);
+            resultDiv.append(topicTag);
+            resultDiv.append(download);              
             $("#gifImage").prepend(resultDiv);     
         }
     });
@@ -142,11 +146,15 @@ $(document).ready(function () {
 
   showButtons();
 
+  $(document).on("click",".giffy",animateGif);
+
+
+
 
   function animateGif() {
     // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
     var state = $(this).attr("data-state");
-    console.log(state)
+    // console.log(state)
     // If the clicked image's state is still, update its src attribute to what its data-animate value is.
     // Then, set the image's data-state to animate
     // Else set src to the data-still value
@@ -158,6 +166,8 @@ $(document).ready(function () {
       $(this).attr("data-state", "still");
     }
   };
+
+  //https://i.giphy.com/
   
   
   });

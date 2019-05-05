@@ -3,6 +3,11 @@ var divider = 0;
 var apiKey = "ieKS1cEoA0whNt3E5nXD19zwZzqeZo8I"; //FROM MY MAGICAL CAT BUTTON API
 var searchResult = "";
 
+//shorthanded console log
+function q(x){
+  console.log(x + " console log");
+};
+
 $(document).ready(function () {
 
 
@@ -21,7 +26,7 @@ $(document).ready(function () {
         button.attr("data-name", emotions[i]);
         button.text(emotions[i]);
         $("#addButtons").append(button);
-
+        q(divider);
       }
 
       else if (divider % 4 == 0)
@@ -74,8 +79,10 @@ $(document).ready(function () {
   }
 
     $(document).on("click", ".buttonMaker", searchGifs);
+    $(document).on("click",".giffy",animateGif);
 
  
+
 
   $("#searchButton").on("click", function (event) {
     event.preventDefault();
@@ -117,31 +124,16 @@ $(document).ready(function () {
   
             var resultDiv = $("<div class='flex-column result'>");                                
             var pTag = $("<p class='d-flex p-2 desc' >").text("Rating: " + results[i].rating);    
-            var newGif = $("<img class='d-flex pic'>").attr('data-state', 'animate');  
             var topicTag = $("<p class='d-flex p-2 desc1' >").text("Topic: " + topic );
 
-
             var imgURL = response.data[i].images.fixed_width_still.url;
-            console.log(imgURL);
             var imgURLStill = response.data[i].images.fixed_width_still.url;
-            console.log(imgURLStill);
             var imgURLAnimate = response.data[i].images.fixed_width_downsampled.url;
-            console.log(imgURLAnimate);
-            var image = $("<img>").attr("src", imgURL).attr("data-still", imgURLStill).attr("data-animate", imgURLAnimate).attr("data-state", "still");
+            var newGif = $("<img>").attr("src", imgURL).attr("data-still", imgURLStill).attr("data-animate", imgURLAnimate).attr("data-state", "still");
+            newGif.addClass("giffy");
 
-            image.addClass("gif");
-
-            var gifUrl = results[i].images.original.url;           
-            newGif.attr("src", gifUrl);                              
-            newGif.addClass("gif");
-  
-            var stillURL = results[i].images.fixed_width_still.url;    
-            newGif.attr("data-animate", gifUrl);
-            newGif.attr("data-still", stillURL);
-  
-            $("#gifImage").append(newGif);
-            resultDiv.append(newGif);              
-            resultDiv.append(pTag);
+            resultDiv.prepend(newGif);              
+            resultDiv.prepend(pTag);
             resultDiv.prepend(topicTag);
             $("#gifImage").prepend(resultDiv);     
         }
@@ -151,21 +143,21 @@ $(document).ready(function () {
   showButtons();
 
 
-
-  $(".gif").on("click", function () {
-
+  function animateGif() {
+    // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
     var state = $(this).attr("data-state");
-
-    if (state == "still") {
-        $(this).attr("src", $(this).attr("data-animate"));
-        $(this).attr("data-state", "animate")
-
+    console.log(state)
+    // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+    // Then, set the image's data-state to animate
+    // Else set src to the data-still value
+    if (state === "still") {
+      $(this).attr("src", $(this).attr("data-animate"));
+      $(this).attr("data-state", "animate");
     } else {
-        $(this).attr("src", $(this).attr("data-still"));
-        $(this).attr("data-state", "still")
+      $(this).attr("src", $(this).attr("data-still"));
+      $(this).attr("data-state", "still");
     }
-});
-
+  };
   
   
   });

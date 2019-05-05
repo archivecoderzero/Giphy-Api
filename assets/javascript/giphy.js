@@ -1,6 +1,6 @@
 var emotions = ["lucky", "awesome", "hyped" , "bad" , "sad"];
 var divider = 0;
-var apiKey = "ieKS1cEoA0whNt3E5nXD19zwZzqeZo8I"; //magical cat button API
+var apiKey = "ieKS1cEoA0whNt3E5nXD19zwZzqeZo8I"; //FROM MY MAGICAL CAT BUTTON API
 var searchResult = "";
 
 $(document).ready(function () {
@@ -68,7 +68,6 @@ $(document).ready(function () {
 
 
       }
-
       // console.log(divider);
       divider++
     }
@@ -93,49 +92,6 @@ $(document).ready(function () {
     showButtons();
   });
 
-
-
-//   function clickButton(searchResult) {
-//     // set the search term to the value input by the user
-//     var searchImage = searchResult;
-//     // console.log("function clickButton proc")
-
-//     var offset = Math.floor(Math.random() * 999);
-//     // console.log(offset)
-  
-//     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchImage + "&api_key=" + apiKey +"&limit=10&offset="+offset+"&random";
-//     // console.log(apiKey) ;
-//     console.log( "this is the " + searchResult + " query");
-  
-//     $.ajax({
-//         url: queryURL,
-//         method: "GET"
-//     }).then(function (response) {
-//         var results = response.data;
-//         for (var i = 0; i < results.length; i++) {
-  
-//             var resultDiv = $("<div class='flex-column result'>");                                
-//             var pTag = $("<p class='d-flex p-2 desc' >").text("Rating: " + results[i].rating);    
-//             var newGif = $("<img class='d-flex pic'>").attr('data-state', 'animate');       
-  
-//             let gifUrl = results[i].images.original.url;           
-//             newGif.attr("src", gifUrl);                              
-//             newGif.addClass("gif");
-  
-//             let stillURL = results[i].images.fixed_width_still.url;    
-//             newGif.attr("data-animate", gifUrl);
-//             newGif.attr("data-still", stillURL);
-  
-//             $("#gifImage").append(newGif);
-//             resultDiv.append(newGif);              
-//             resultDiv.append(pTag);
-  
-//             $("#gifImage").prepend(resultDiv);     
-//         }
-//     });
-//   }
-
-
   //onclick event for when the user clicks a button
   function searchGifs() {
     var searchImage = $(this).attr("data-name");
@@ -150,9 +106,8 @@ $(document).ready(function () {
     console.log(offset)
   
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchImage + "&api_key=" + apiKey +"&limit=10&offset="+offset+"&random";
-    // console.log(apiKey) ;
-    // console.log( "this is the " + searchImage + " query");
   
+    //ajax
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -167,9 +122,11 @@ $(document).ready(function () {
 
 
             var imgURL = response.data[i].images.fixed_width_still.url;
+            console.log(imgURL);
             var imgURLStill = response.data[i].images.fixed_width_still.url;
+            console.log(imgURLStill);
             var imgURLAnimate = response.data[i].images.fixed_width_downsampled.url;
-
+            console.log(imgURLAnimate);
             var image = $("<img>").attr("src", imgURL).attr("data-still", imgURLStill).attr("data-animate", imgURLAnimate).attr("data-state", "still");
 
             image.addClass("gif");

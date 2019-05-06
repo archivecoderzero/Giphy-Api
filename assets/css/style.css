@@ -11,11 +11,17 @@
     background-image: url(../../assets/images/clearhover.gif);
 }
 
+
+#clearTopic {
+    margin-right:20px;
+}
+
 #clearTopic:hover {
+    margin-right:20px;
     background-image: url(../../assets/images/bghover.gif);
 }
 
-#moreButton {
+#moreButton:hover {
     background-image: url(../../assets/images/bgmore.gif);
 }
 

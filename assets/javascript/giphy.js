@@ -235,7 +235,8 @@ $(document).ready(function () {
   });
 
   $("#clearTopic").click(function () {
-    buttonsTopic = ["funny", "emotional", "fantastic", "great", "amusing"];
+    buttonsTopic = [];
+    topicMaker();
     showButtons();
   });
 

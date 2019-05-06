@@ -2,7 +2,7 @@
 
 A fully functioning web application that uses various technologies, jquery, vanilla javascript , HTML , CSS and usage of API . This is to showcase my ability as a web developer to navigate thru the data of a given API and use it to build a web application . 
 
-#Introduction :
+# Introduction :
 
 This is a functional random gif generator . When you open the application , you will be given 5 random with randomized topics each. Clicking those buttons will generate a random gif correlated to the the topic of the button that was pressed, This randomized event was enabled thru the manipulation of the "offset" parameter on the GIPHY API . The user (you) can then search for your own words, or click the "MORE BUTTONS" to generate another set of 5 buttons with a random topic each . The user (you) can also clear the buttons and clear the gifs . When the user clicks the Download button,he will be redirected to the full resolution of the image ,this is NOT on the GIPHY api ,the URL is parsed and appended to another similar hostname to achieve this(the hostname without the annoying giphy adds). The possilities are endless, this is trully a GIF to the world!
 

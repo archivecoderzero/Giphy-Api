@@ -15,6 +15,14 @@
     background-image: url(../../assets/images/bghover.gif);
 }
 
+#moreButton {
+    background-image: url(../../assets/images/bgmore.gif);
+}
+
+#moreButton:hover {
+    background-image: url(../../assets/images/bgmore.gif);
+}
+
 #jtronMain {
     text-align: center;
     font-family: 'Fredericka the Great', cursive;

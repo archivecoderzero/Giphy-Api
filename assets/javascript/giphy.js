@@ -125,14 +125,21 @@ $(document).ready(function () {
             var resultDiv = $("<div class='flex-column result'>");                                
             var pTag = $("<p class='d-flex p-2 desc' >").text("Rating: " + results[i].rating);    
             var topicTag = $("<p class='d-flex p-2 desc1' >").text("Topic: " + topic );
-            var download = $('<a href='+ imgDownload +' download = image>').text("DOWNLOAD");
-            var imgDownload = response.data[x].images.fixed_width_downsampled.url
+            var download = $('<a>').text("DOWNLOAD");
+            
+            var mainURL = response.data[i].images.original.url;
+            var parsedDL ="https://i.giphy.com"+mainURL.slice(24);
             var imgURL = response.data[i].images.fixed_width_still.url;
             var imgURLStill = response.data[i].images.fixed_width_still.url;
             var imgURLAnimate = response.data[i].images.fixed_width_downsampled.url;
             var newGif = $("<img>").attr("src", imgURL).attr("data-still", imgURLStill).attr("data-animate", imgURLAnimate).attr("data-state", "still");
             newGif.addClass("giffy");
             download.addClass("btn btn-outline-dark");
+            download.attr("download","FILE_NAME.jpg");
+            download.attr("href",parsedDL);
+            download.attr("target","_blank");
+
+
 
             $("#gifImage").append(newGif);
             resultDiv.append(newGif);              
@@ -146,8 +153,9 @@ $(document).ready(function () {
 
   showButtons();
 
-  $(document).on("click",".giffy",animateGif);
 
+
+  $(document).on("click",".giffy",animateGif);
 
 
 
@@ -166,8 +174,62 @@ $(document).ready(function () {
       $(this).attr("data-state", "still");
     }
   };
+  function noBG() {
+    $(".navbar").css("background", "black");
+    $(".navbar-brand.mb-0.h1").css("color", "black");
+    $(".jumbotron").css("background", "black");
+    $("body").css("background", "black");
+    $(".btn.btn-info.btn-lg.search").css("background", "black");
+    $("#clearButton").css("background", "black");
+  }
 
-  //https://i.giphy.com/
-  
+  function reBG() {
+
+    $(".navbar").css("color","midnightblue");
+    $(".navbar").css("background-image","url('assets/images/nav.gif')");
+   
+    $(".navbar-brand.mb-0.h1").css("color", "white");
+
+
+    $(".jumbotron").css("background-image","url('assets/images/bodybg.gif')");
+    $(".jumbotron").css("background-position","center");
+    $(".jumbotron").css("background-repeat","no-repeat");
+    $(".jumbotron").css("background-size","cover");
+
+    $("body").css("background-image","url('assets/images/bgbod.gif')");
+
+    $(".btn.btn-info.btn-lg.search").css("background-image","url('assets/images/buttonbg.gif')");
+
+    $("#clearButton").css("background-image","url('assets/images/clearhover.gif')");
+  }
+
+
+  var togler = false;
+
+// TOGGLE FUNCTION 
+  $("#toggler").click(function(){
+    console.log("clicking")
+    if (togler === true){
+    reBG();
+    togler = false;
+    console.log("togler NO BG")}
+    else  {
+    noBG();
+    console.log("togler REBG")
+    togler = true;
+    }
+  });
+
+  $("#clearButton").click(function(){
+    $("#gifImage").empty();
+
+  });
+
+  $("#clearTopic").click(function(){
+    buttonsTopic = ["funny", "emotional", "fantastic" , "great" , "amusing"];
+    showButtons();
+  });
+
+
   
   });

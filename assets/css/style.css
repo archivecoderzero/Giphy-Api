@@ -1,6 +1,18 @@
-.btn.btn-info.search {
-    background-image: url(../../assets/images/buttonbg.gif)
+.btn.btn-info.btn-lg.search {
+    background-image: url(../../assets/images/buttonbg.gif);
+}
 
+#clearButton {
+    margin-right:20px;
+}
+
+
+#clearButton:hover {
+    background-image: url(../../assets/images/clearhover.gif);
+}
+
+#clearTopic:hover {
+    background-image: url(../../assets/images/bghover.gif);
 }
 
 #jtronMain {

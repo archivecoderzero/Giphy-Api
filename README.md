@@ -1,6 +1,6 @@
 # Giphy-Api
 
-A fully functioning web application that uses various technologies, jquery, vanilla javascript , HTML , CSS and usage of API . This is to showcase my ability as a web developer to navigate thru the data of a given API and use it to build a web application . 
+A fully functioning web application that uses various technologies, jquery, vanilla javascript , HTML , CSS and usage of API . This is to showcase my ability as a web developer to navigate thru the data of a given API and use it to build a real world working web application . 
 
 # Introduction :
 

@@ -9,7 +9,7 @@ var searchResult = "";
 // };
 
 
-var arrayOfwords = ["random", 'best', 'freak', 'apple', 'money', 'green', "funny", "emotional", "fantastic", "great", "amusing", "fun", "cat", 'god', 'dog', "moose", "trees", "rick and morty", 'buzz', 'flames', 'winner', 'fantastic', 'first', 'undefined', 'spooky', 'amazing', 'genious', 'best', 'friend', 'orange', 'huey', 'you', 'reddit', 'background', 'dota', 'game of thrones', 'holy', 'artistic','agreeable','ahead',"fancy","fantastic","far"," fascinated","fast","fearful,'fearless","female","festive","few,'fierce","filthy","fine","first"," five"," fixed"," flagrant","flashy","flat","flawless"];
+var arrayOfwords = ["random", 'best', 'freak', 'apple', 'money', 'green', "funny", "emotional", "fantastic", "great", "amusing", "fun", "cat", 'god', 'dog', "moose", "trees", "rick and morty", 'buzz', 'flames', 'winner', 'fantastic', 'first', 'undefined', 'spooky', 'amazing', 'genious', 'best', 'friend', 'orange', 'huey', 'you', 'reddit', 'background', 'dota', 'game of thrones', 'holy', 'artistic','coffee','stuff',"fancy","fantastic","far","fascinated","fast","fearful","fearless","female","festive","few","fierce","forrest","fine","first"," five"," fixed"," flagrant","flashy","flat","flawless","amazing","awwww","artist","art",'banana', "ball", "blade", "black","blue","bright","blaze", "car","cars","cast", "clay","calm","call","call me maybe"];
 
 function topicMaker() {
   for (x = 0; x < 5; x++) {
@@ -188,13 +188,23 @@ $(document).ready(function () {
     $(".jumbotron").css("background", "black");
     $("body").css("background", "black");
     $(".btn.btn-info.btn-lg.search").css("background", "black");
-    $("#clearButton").css("background", "black");
+    $("#toggler").text("Toggle Effects : Status : OFF");
+    $("#toggler").css("background", "black");
+
+
   }
 
   function reBG() {
 
     $(".navbar").css("color", "midnightblue");
     $(".navbar").css("background-image", "url('assets/images/nav.gif')");
+    $(".navbar").css("background-position", "center");
+    $(".navbar").css("background-repeat", "no-repeat");
+    $(".navbar").css("background-size", "cover");
+    $("#toggler").text("Toggle Effects : Status : ON");
+
+
+
 
     $(".navbar-brand.mb-0.h1").css("color", "white");
 
@@ -205,10 +215,13 @@ $(document).ready(function () {
     $(".jumbotron").css("background-size", "cover");
 
     $("body").css("background-image", "url('assets/images/bgbod.gif')");
+    $("body").css("background-position", "center");
+    $("body").css("background-repeat", "no-repeat");
+    $("body").css("background-size", "cover");
+
+
 
     $(".btn.btn-info.btn-lg.search").css("background-image", "url('assets/images/buttonbg.gif')");
-
-    $("#clearButton").css("background-image", "url('assets/images/clearhover.gif')");
   }
 
 

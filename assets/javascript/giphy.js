@@ -6,10 +6,10 @@ var searchResult = "";
 //shorthanded console log
 // function q(x){
 //   console.log(x + " console log");
-// };
+// };F
 
 
-var arrayOfwords = ["random", 'best', 'freak', 'apple', 'money', 'green', "funny", "emotional", "fantastic", "great", "amusing", "fun", "cat", 'god', 'dog', "moose", "trees", "rick and morty", 'buzz', 'flames', 'winner', 'fantastic', 'first', 'undefined', 'spooky', 'amazing', 'genious', 'best', 'friend', 'orange', 'you', 'reddit', 'background', 'dota', 'game of thrones', 'holy', 'artistic','coffee','stuff',"fancy","fantastic","far","fascinated","fast","fearful","fearless","female","festive","few","fierce","forrest","fine","first"," five"," fixed"," flagrant","flashy","flat","flawless","amazing","awwww","artist","art",'banana', "ball", "blade", "black","blue","bright","blaze", "car","cars","cast", "clay","calm","call", "class" , "clam" , "cloud", "dog" ,"dawg" ];
+var arrayOfwords = ["random", 'best', 'freak', 'apple', 'money', 'green', "funny", "emotional", "fantastic", "great", "amusing", "fun", "cat", 'god', 'dog', "moose", "trees", "rick and morty", 'buzz', 'flames', 'winner', 'fantastic', 'first', 'undefined', 'spooky', 'amazing', 'genious', 'best', 'friend', 'orange', 'you', 'reddit', 'background', 'dota', 'game of thrones', 'holy', 'artistic','coffee','stuff',"fancy","fantastic","far","fascinated","fast","fearful","fearless","female","festive","few","fierce","forrest","fine","first"," five"," fixed"," flagrant","flashy","flat","flawless","amazing","artist","art",'banana', "ball", "blade", "black","blue","bright","blaze", "car","cars","cast", "clay","calm","call", "class" , "clam" , "cloud", "dog" ,"dawg" ];
 
 function topicMaker() {
   for (x = 0; x < 5; x++) {

@@ -45,9 +45,9 @@ This is a functional random gif generator . When you open the application , you 
 
 05/05/19
 
-> as i was testing the generated words, some do not have any generated gifs, this leads me to believe that it might not have any associated gifs in regards to that word. IE : "panicky" . Manually searching it did not yield any results .
+> STATUS : FIXED : as i was testing the generated words, some do not have any generated gifs, this leads me to believe that it might not have any associated gifs in regards to that word. IE : "panicky" . Manually searching it did not yield any results .
 
-> Download button does not automatically download the image, it redirects to the image from Giphy host , to avoid this , i parsed the URL to directly pull the image address .
+> STATUS : STILL A "FEATURE" :Download button does not automatically download the image, it redirects to the image from Giphy host , to avoid this , i parsed the URL to directly pull the image address .
 
 
 ### Feel free to copy and remix this code ! this is my "GIF" to the world :)
